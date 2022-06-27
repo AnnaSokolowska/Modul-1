@@ -20,4 +20,7 @@ git config --global init.defaultBranch main # Ветка по умолчанию
  git add .  # добавить все файлы из корня в трек
 
  git commit -m "сообщение" # выполнить коммит (сделать слепок) текущего состояния проекта
+ git diff 
+ git diff color.words # строчки какие изменились внутри строчки
+ 
  git log --online посмотреть историю коммита
