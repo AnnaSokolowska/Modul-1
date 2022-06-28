@@ -27,8 +27,8 @@
 {
     const productName = prompt('Введите наименование товара');
     const productCategory = prompt('Введите категорию товара');
-    const productAmount = prompt('Введите количество товара');
-    const productPrice = prompt('Введите цену товара');
+    const productAmount = Number(prompt('Введите количество товара'));
+    const productPrice = Number(prompt('Введите цену товара'));
 
     console.log(`ProductName:  ${typeof productName}`);
     console.log(`ProductCategory:  ${typeof productCategory}`);
@@ -36,7 +36,7 @@
     console.log(`ProductPrice:  ${typeof productPrice}`);
 
 
-    console.log(`На складе ${Number(productAmount)} единицы товара "${productName}" на сумму  ${(Number(productAmount)) * Number(productPrice)} рубля`);
+    console.log(`На складе ${productAmount} единицы товара "${productName}" на сумму  ${(productAmount * productPrice)} рубля`);
 
 
 }
