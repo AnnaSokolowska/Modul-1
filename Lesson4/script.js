@@ -30,9 +30,9 @@
     const productAmount = Number(prompt('Введите количество товара'));
     const productPrice = Number(prompt('Введите цену товара'));
 
-    if ( productAmount > 0 && productPrice > 0) {
-        console.log(`На складе ${productAmount} единицы товара "${productName}" на сумму  ${productAmount * productPrice} рубля`);
-    } else
-    alert('Вы ввели некорректные данные');
+    if (isNaN(productAmount) || isNaN(productPrice)) {
+        console.log('Вы ввели некорректные данные');
+        } else
+    console.log(`На складе ${productAmount} единицы товара "${productName}" на сумму  ${productAmount * productPrice} рубля`);
 
 }
