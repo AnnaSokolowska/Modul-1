@@ -18,7 +18,7 @@ const getAveragePriceGoods = (arr) => {
     sum += y;
     amount += x;
     }
-    const averageValue = sum / amount;
+    const averageValue = Math.floor(sum / amount);
     return averageValue;
 }
 

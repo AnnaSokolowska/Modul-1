@@ -8,7 +8,7 @@ const isPrime = (m) => {
     break;
   }
 } 
-return console.log(answer);
+return answer;
 }
 const result = isPrime(Number(prompt('Введите число')));
-
+console.log(result);

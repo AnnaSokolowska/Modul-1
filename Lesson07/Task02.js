@@ -9,7 +9,7 @@ const getAverageValue = (arr) => {
         sum += arr[i];
         amount++;
     }
- const averageValue = sum / amount;
+ const averageValue = Math.floor(sum / amount);
  return averageValue;
 }
 
