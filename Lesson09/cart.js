@@ -5,24 +5,15 @@ const cart = {
   getTotalPrice() {
     return Number(this.totalPrice);
   },
-  add() {
-    while (true) {
-      const productName = prompt("Введите наименование товара");
-      const productAmount = Number(prompt("Введите количество товара"));
-      const productPrice = Number(prompt("Введите цену товара"));
-      const product = {
-        name: productName,
-        amount: productAmount,
-        price: productPrice,
-      };
-      this.items.push(product);
-      this.calculateItemPrice();
-      this.increaseCount();
-      let a = confirm("Хотите еще внести товар в корзину?");
-      if (a === false) {
-        break;
-      }
-    }
+  add(productName, productAmount, productPrice) {
+    const product = {
+      name: productName,
+      amount: productAmount,
+      price: productPrice,
+    };
+    this.items.push(product);
+    this.calculateItemPrice();
+    this.increaseCount();
     return this.items;
   },
   increaseCount() {
@@ -38,9 +29,9 @@ const cart = {
     return this.totalPrice;
   },
   clear() {
-this.items = [];
-this.count = 0;
-this.totalPrice = 0;
+    this.items = [];
+    this.count = 0;
+    this.totalPrice = 0;
   },
 
   print() {
@@ -48,8 +39,25 @@ this.totalPrice = 0;
     return `${itemsStr} \n Общая стоимость корзины: ${this.getTotalPrice()}`;
   },
 };
-const result = cart.add();
+const result = cart.add(
+  prompt("Введите наименование товара"),
+  Number(prompt("Введите количество товара")),
+  Number(prompt("Введите цену товара"))
+);
+const result1 = cart.add(
+  prompt("Введите наименование товара"),
+  Number(prompt("Введите количество товара")),
+  Number(prompt("Введите цену товара"))
+);
+const result2 = cart.add(
+  prompt("Введите наименование товара"),
+  Number(prompt("Введите количество товара")),
+  Number(prompt("Введите цену товара"))
+);
 console.log(result);
+console.log(result1);
+console.log(result2);
 console.log(cart.print());
+console.log(cart);
 const clear = cart.clear();
 console.log(cart);
