@@ -56,3 +56,6 @@ console.log(cart.print());
 console.log(cart);
 const clear = cart.clear();
 console.log(cart);
+
+
+
