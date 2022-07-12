@@ -1,3 +1,5 @@
 'use strict';
-window.roScPaper();
+const startGame = window.roScPaper();
+startGame();
+
 
