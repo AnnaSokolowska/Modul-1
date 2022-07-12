@@ -19,16 +19,17 @@
       },
     };
     return function start() {
+      let word;
       const getcompChoice = () => {
         const randomNumber = getRandomIntInclusive(0, 2);
         if (randomNumber === 0) {
-          console.log('к');
+          word = 'камень';
         }
         if (randomNumber === 1) {
-          console.log('н');
+          word = 'ножницы';
         }
         if (randomNumber === 2) {
-          console.log('б');
+          word = 'бумага';
         } return randomNumber;
       };
 
@@ -42,26 +43,35 @@
           alert('Вы ввели неверное значение');
         }
         const compChoice = getcompChoice();
+        let playerWord;
+        if (playerChoice === 0) {
+          playerWord = 'камень';
+        } else if (playerChoice === 1) {
+          playerWord = 'ножницы';
+        } else if (playerChoice === 2) {
+          playerWord = 'бумага';
+        }
         if (
           (playerChoice === 0 && compChoice === 1) ||
           (playerChoice === 1 && compChoice === 2) ||
           (playerChoice === 2 && compChoice === 0)
         ) {
           result.increasePlayer();
-          console.log('Вы выиграли');
+          alert(`Игрок: ${playerWord} \nКомпьютер: ${word} \nВы выиграли`);
         } else if (
           (compChoice === 0 && playerChoice === 1) ||
           (compChoice === 1 && playerChoice === 2) ||
           (compChoice === 2 && playerChoice === 0)
         ) {
           result.increaseComputer();
-          console.log('Выиграл компьютер');
+          alert(`Игрок: ${playerWord} \nКомпьютер: ${word} 
+          \nВыиграл компьютер`);
         } else if (
           (compChoice === 0 && playerChoice === 0) ||
           (compChoice === 1 && playerChoice === 1) ||
           (compChoice === 2 && playerChoice === 2)
         ) {
-          alert('Ничья');
+          alert(`Игрок: ${playerWord} \nКомпьютер: ${word} \nНичья`);
         }
         let results = 'Счет равен';
         if (result.player > result.computer) {
@@ -75,7 +85,7 @@
       } else {
         const b = confirm('Вы уверены, что хотите закончить игру?');
         if (b === true) {
-          console.log(result);
+          alert(`Игрок: ${result.player} \nКомпьютер: ${result.computer}`);
         } else start();
       }
     };
