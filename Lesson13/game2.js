@@ -19,6 +19,7 @@
         this.computer = Number(this.computer) + 1;
       },
     };
+    languague = prompt('Введите ENG если хотите играть на английском');
     const lang = languague;
     if (lang === 'EN' || lang === 'ENG') {
       return function start1() {
@@ -91,7 +92,7 @@
           } else start1();
         }
       };
-    };
+    }
     return function start() {
       let word;
       const getcompChoice = () => {
