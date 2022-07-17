@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 (() => {
-  const FIGURES_RUS = ['к', 'н', 'б'];
-  const FIGURE_ENG = ['r', 's', 'p'];
+  const FIGURES_RUS = ["к", "н", "б"];
+  const FIGURE_ENG = ["r", "s", "p"];
 
   const getRandomIntInclusive = (min, max) => {
     min = Math.ceil(min);
@@ -19,40 +19,41 @@
         this.computer = Number(this.computer) + 1;
       },
     };
-    languague = prompt('Введите ENG если хотите играть на английском');
+    languague = prompt("Введите ENG если хотите играть на английском ");
     const lang = languague;
-    if (lang === 'EN' || lang === 'ENG') {
+    if (lang === "EN" || lang === "ENG") {
       return function start1() {
         let word;
         const getcompChoice = () => {
           const randomNumber = getRandomIntInclusive(0, 2);
           if (randomNumber === 0) {
-            word = 'rock';
+            word = "rock";
           }
           if (randomNumber === 1) {
-            word = 'scissors';
+            word = "scissors";
           }
           if (randomNumber === 2) {
-            word = 'paper';
-          } return randomNumber;
+            word = "paper";
+          }
+          return randomNumber;
         };
 
-        const playerWorld = prompt('Please write: rock, scissors or paper');
+        const playerWorld = prompt("Please write: rock, scissors or paper");
         if (!(playerWorld === null)) {
           const firstLetter = playerWorld[0];
           console.log(firstLetter);
           const playerChoice = FIGURE_ENG.indexOf(firstLetter);
           if (playerChoice === -1) {
-            alert('Something goes wrong');
+            alert("Something goes wrong");
           }
           const compChoice = getcompChoice();
           let playerWord;
           if (playerChoice === 0) {
-            playerWord = 'rock';
+            playerWord = "rock";
           } else if (playerChoice === 1) {
-            playerWord = 'scissors';
+            playerWord = "scissors";
           } else if (playerChoice === 2) {
-            playerWord = 'paper';
+            playerWord = "paper";
           }
           if (
             (playerChoice === 0 && compChoice === 1) ||
@@ -76,17 +77,17 @@
           ) {
             alert(`Player: ${playerWord} \nComputer: ${word} \nDraw`);
           }
-          let results = 'Equal score';
+          let results = "Equal score";
           if (result.player > result.computer) {
-            results = 'You won';
+            results = "You won";
           } else if (result.player < result.computer) {
-            results = 'Computer won';
+            results = "Computer won";
           }
           console.log(`Player: ${result.player} \nComputer: ${result.computer}
                \n ${results}`);
           start1();
         } else {
-          const b = confirm('Are you sure?');
+          const b = confirm("Are you sure?");
           if (b === true) {
             alert(`Player: ${result.player} \nComputer: ${result.computer}`);
           } else start1();
@@ -98,33 +99,34 @@
       const getcompChoice = () => {
         const randomNumber = getRandomIntInclusive(0, 2);
         if (randomNumber === 0) {
-          word = 'камень';
+          word = "камень";
         }
         if (randomNumber === 1) {
-          word = 'ножницы';
+          word = "ножницы";
         }
         if (randomNumber === 2) {
-          word = 'бумага';
-        } return randomNumber;
+          word = "бумага";
+        }
+        return randomNumber;
       };
 
-      const playerWorld = prompt('Введите камень, ножницы или бумага');
+      const playerWorld = prompt("Введите камень, ножницы или бумага");
 
       if (!(playerWorld === null)) {
         const firstLetter = playerWorld[0];
         console.log(firstLetter);
         const playerChoice = FIGURES_RUS.indexOf(firstLetter);
         if (playerChoice === -1) {
-          alert('Вы ввели неверное значение');
+          alert("Вы ввели неверное значение");
         }
         const compChoice = getcompChoice();
         let playerWord;
         if (playerChoice === 0) {
-          playerWord = 'камень';
+          playerWord = "камень";
         } else if (playerChoice === 1) {
-          playerWord = 'ножницы';
+          playerWord = "ножницы";
         } else if (playerChoice === 2) {
-          playerWord = 'бумага';
+          playerWord = "бумага";
         }
         if (
           (playerChoice === 0 && compChoice === 1) ||
@@ -148,17 +150,17 @@
         ) {
           alert(`Игрок: ${playerWord} \nКомпьютер: ${word} \nНичья`);
         }
-        let results = 'Счет равен';
+        let results = "Счет равен";
         if (result.player > result.computer) {
-          results = 'Вы выиграли';
+          results = "Вы выиграли";
         } else if (result.player < result.computer) {
-          results = 'Выиграл компьютер';
+          results = "Выиграл компьютер";
         }
         console.log(`Игрок: ${result.player} \nКомпьютер: ${result.computer}
              \n ${results}`);
         start();
       } else {
-        const b = confirm('Вы уверены, что хотите закончить игру?');
+        const b = confirm("Вы уверены, что хотите закончить игру?");
         if (b === true) {
           alert(`Игрок: ${result.player} \nКомпьютер: ${result.computer}`);
         } else start();
